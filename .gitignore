@@ -1,3 +1,4 @@
 target/
+lib/*
 /lockwait.dat
 /IdocConsole.zip

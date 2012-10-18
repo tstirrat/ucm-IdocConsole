@@ -21,7 +21,7 @@ public class IdocConsoleServices {
    * @throws ServiceException
    *           If something goes wrong evaluating the script.
    */
-  @ServiceMethod(name = "TS_EVALUATE_IDOC", template = "TS_IDOC_CONSOLE")
+  @ServiceMethod(name = "EVALUATE_IDOC", template = "TPL_IDOC_CONSOLE")
   public void evaluateIdocScript(@Binder(name = "eval") String eval, DataBinder outputBinder, PageMerger pm)
       throws ServiceException {
 
