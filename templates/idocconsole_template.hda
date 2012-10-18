@@ -1,0 +1,19 @@
+<?hda version="10.1.3.5.1 (110524)" jcharset=UTF8 encoding=utf-8?>
+@Properties LocalData
+blFieldTypes=
+blDateFormat=dd/MM/yyyy {H:mm[:ss] [zzz]}!tAustralia/Sydney
+@end
+@ResultSet IdocConsole_Templates
+5
+name
+class
+formtype
+filename
+description
+TPL_IDOC_CONSOLE
+Administration
+Form
+tpl_idoc_console.htm
+AJAX Idoc Console Page
+@end
+

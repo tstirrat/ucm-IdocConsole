@@ -1,0 +1,40 @@
+<$ include std_doctype_html_decl $>
+<head><$ defaultPageTitle="Idoc Console" $> <$ include
+std_html_head_declarations $>
+</head>
+<$styleHeaderClass = "xuiAltHeader"$> <$if slimResults or damResults or
+myViewResults or isCustomResultTemplate$> <$styleHeaderClass =
+"xuiListHeaderCell"$> <$endif$>
+<body id="body"
+	<$include body_def_internal$> > <$ include std_page_begin $>
+
+	<h1>Idoc Console</h1>
+<form action="" method="get">
+	<input type="hidden" name="IdcService" value="TS_EVALUATE_IDOC">
+	<!-- input type="hidden" name="IsJson" value="1" -->
+	<table style="width: 100%">
+
+		<tr>
+			<td></td>
+			<td class="<$styleHeaderClass$>"><$lc("tsIdocScript")$></td>
+			<td></td>
+			<td class="<$styleHeaderClass$>"><$lc("tsResult")$></td>
+			<td></td>
+		</tr>
+		<tr style="width: 100%">
+			<td style="width: 30%"></td>
+			<td style="text-align: right; width: 15%"><textarea name="eval"><$ if eval $><$ eval $><$ endif $></textarea></td>
+			<td style="width: 2%;"></td>
+			<td style="width: 15%"><div id="output"><$ if output $><$ output $><$ endif $></div></td>
+			<td style="width: 38%"></td>
+		</tr>
+	</table>
+	<Button onClick="submitUpdate()"><$lc("wwSubmit")$></Button>
+	&nbsp;
+	<Button onClick="reset()"><$lc("wwReset")$></Button>
+	&nbsp;
+</form>
+
+<$ include std_page_end $>
+</body>
+</html>

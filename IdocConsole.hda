@@ -1,0 +1,49 @@
+<?hda version="11gR1-11.1.1.6.0-idcprod1-111219T111403" jcharset="UTF8" encoding="utf-8"?>
+@Properties LocalData
+ComponentName=IdocConsole
+blDateFormat=dd/MM/yyyy {H:mm[:ss] [zzz]}!tAustralia/Sydney
+blFieldTypes=
+classpath=$COMPONENT_DIR/lib/IdocConsole-0.1-SNAPSHOT.jar
+hasPreferenceData=0
+preventAdditionalComponentDowngrade=0
+version=0.1-SNAPSHOT $Rev$
+@end
+@ResultSet ResourceDefinition
+4
+type
+filename
+tables
+loadOrder
+template
+templates/idocconsole_template.hda
+null
+10
+@end
+@ResultSet Filters
+4
+type
+location
+parameter
+loadOrder
+extraAfterConfigInit
+org.ucmtwine.Bootstrapper
+idocconsole.properties
+1000
+@end
+@ResultSet MergeRules
+4
+fromTable
+toTable
+column
+loadOrder
+IdocConsole_Templates
+IntradocTemplates
+name
+10
+@end
+@ResultSet ClassAliases
+3
+classname
+location
+loadOrder
+@end
