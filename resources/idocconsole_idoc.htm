@@ -9,7 +9,7 @@ IdocConsole htmlIncludeOrString
 
 <@dynamicdata CoreMenuItems@>
 id,           label,            linkType, linkData
-IDOC_CONSOLE, Speedy Archiver,  cgi,      IdcService=GET_DOC_PAGE&Action=GetTemplatePage&Page=TPL_IDOC_CONSOLE
+IDOC_CONSOLE, Idoc Console,  cgi,      IdcService=GET_DOC_PAGE&Action=GetTemplatePage&Page=TPL_IDOC_CONSOLE
 <@end@>
 
 <@dynamicdata CoreMenuItemRelationships@>
@@ -38,6 +38,7 @@ IDOC_CONSOLE, ScsPageItem.gif,
   <$ endif $>
 <@end@>
 
+<@tsIdocConsole=Idoc Console@>
 <@tsIdocScript=Idoc Script@>
 <@tsResult=Result@>
 </body></html>
