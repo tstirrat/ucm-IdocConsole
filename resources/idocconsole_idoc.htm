@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>
+IdocConsole htmlIncludeOrString
+</title>
+</head>
+<body>
+
+<@dynamicdata CoreMenuItems@>
+id,           label,            linkType, linkData
+IDOC_CONSOLE, Speedy Archiver,  cgi,      IdcService=GET_DOC_PAGE&Action=GetTemplatePage&Page=TPL_IDOC_CONSOLE
+<@end@>
+
+<@dynamicdata CoreMenuItemRelationships@>
+<?commatable mergeKey="primaryKey"?>
+parentId,   id,           loadOrder
+MENU_B,     IDOC_CONSOLE, 1000
+<@end@>
+
+<@dynamicdata CoreMenuItemsFlags@>
+id,           flags
+IDOC_CONSOLE, isAdmin
+<@end@>
+
+<@dynamicdata CoreMenuItemsImages@>
+id,           image,                imageOpen
+IDOC_CONSOLE, ScsPageItem.gif,
+<@end@>
+
+<@dynamichtml custom_finish_layout_init@>
+  <$ include super.custom_finish_layout_init $>
+  <$ if UserIsAdmin $>
+	  if (navBuilder.menuB) {
+	  	navBuilder.menuB.addTopLevelNode('IDOC_CONSOLE');
+	  	navBuilder.addChildNodeTo('NAVTREE', 'item', 'id==IDOC_CONSOLE', 'label==Idoc Console', 'url==<$HttpCgiPath$>?IdcService=GET_DOC_PAGE&Action=GetTemplatePage&Page=TPL_IDOC_CONSOLE');
+	  }
+  <$ endif $>
+<@end@>
+
+<@tsIdocScript=Idoc Script@>
+<@tsResult=Result@>
+</body></html>
