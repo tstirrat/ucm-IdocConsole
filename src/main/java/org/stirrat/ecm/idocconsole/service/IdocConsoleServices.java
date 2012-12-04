@@ -27,8 +27,14 @@ public class IdocConsoleServices {
 
     String output = "";
 
+    boolean isSSScriptTags = false;
+
+    if (eval.contains("<!--$")) {
+      isSSScriptTags = true;
+    }
+
     try {
-      output = pm.evaluateScriptEx(eval, false);
+      output = pm.evaluateScriptEx(eval, isSSScriptTags);
 
     } catch (Exception e) {
       throw new ServiceException(e.getMessage());
